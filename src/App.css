@@ -1,95 +1,63 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-/* 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-} */
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* General Container */
 .app-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f4f8;
+  padding: 3rem 2rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f4f6f8;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
-/* Form Section */
 .form-section {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
   background: #ffffff;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(128, 40, 40, 0.08);
+  border: 1px solid #e0e0e0;
 }
 
 .form-section h2 {
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-section label {
   display: block;
   margin-top: 1rem;
-  font-weight: 600;
-  color: #555;
+  font-weight: 500;
+  color: #34495e;
 }
 
 .form-section input {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  outline: none;
-  font-size: 1rem;
-  transition: border 0.3s;
+  font-size: 0.95rem;
+  background: #fdfdfd;
+  color: #2c3e50;
+  transition: all 0.3s ease;
 }
 
 .form-section input:focus {
-  border-color: #007bff;
+  border-color: #2980b9;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.3);
+  outline: none;
+  background: #fff;
 }
 
-/* ID Card Preview Section */
 .idcard-preview {
   flex: 1;
   min-width: 300px;
@@ -99,73 +67,86 @@
 }
 
 .id-card {
-  width: 300px;
+  width: 350px;
   background: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  overflow: hidden;
+  border: 1px solid #ccc;
   position: relative;
 }
 
-.id-card .company {
+.id-card::before {
+  content: '';
+  display: block;
+  height: 20px;
+  background: linear-gradient(to right, #1d3557, #1d3557 90%, #e63946 90%);
+}
+
+.company {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #007bff;
+  color: #1d3557;
+  margin: 1rem 0 0.2rem;
 }
 
-.id-card .slogan {
+.slogan {
   font-size: 0.9rem;
-  color: #666;
+  color: #7f8c8d;
+  font-style: italic;
   margin-bottom: 1rem;
 }
 
-.id-card .photo {
-  margin: 1rem 0;
+.photo {
+  width: 120px;
+  height: 140px;
+  background: #f0f0f0;
+  margin: 0 auto 1rem;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.id-card .photo img {
-  width: 100px;
-  height: 100px;
+.photo img {
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #007bff;
 }
 
-.id-card .name {
+.name {
   font-size: 1.1rem;
-  font-weight: bold;
-  color: #222;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
-.id-card .position {
+.position {
   font-size: 0.95rem;
+  font-weight: 500;
   color: #555;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .info-block {
-  font-size: 0.9rem;
-  color: #444;
+  background: #f2f2f2;
+  padding: 1rem;
   text-align: left;
-  padding: 0.5rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #2c3e50;
+  border-top: 1px solid #ddd;
 }
 
 .info-block p {
-  margin: 0.3rem 0;
+  margin: 0.4rem 0;
 }
 
 .bottom-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #007bff;
-  color: #5f3939;
-  font-size: 0.85rem;
+  background: #1d3557;
+  color: #ffffff;
   padding: 0.5rem;
-  border-radius: 0 0 12px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
 }
